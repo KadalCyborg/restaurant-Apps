@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -51,6 +52,13 @@ module.exports = {
   },
   optimization: {
     usedExports: true,
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        // Terser options here
+        sourceMap: true, // enable source maps (optional)
+      }),
+    ],
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
