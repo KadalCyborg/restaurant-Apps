@@ -1,0 +1,11 @@
+import CONFIG from './config';
+
+const API_ENDPOINT = {
+  LIST_RESTAURANT: `${CONFIG.BASE_URL}list`,
+  SMALL_IMAGE: `${CONFIG.SMALL_IMAGE_URL}`,
+  MEDIUM_IMAGE: `${CONFIG.MEDIUM_IMAGE_URL}`,
+  LARGE_IMAGE: `${CONFIG.LARGE_IMAGE_URL}`,
+  DETAIL: (id) => `${CONFIG.BASE_URL}detail/${id}`,
+};
+
+export default API_ENDPOINT;
