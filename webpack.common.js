@@ -53,12 +53,7 @@ module.exports = {
   optimization: {
     usedExports: true,
     minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        // Terser options here
-        sourceMap: true, // enable source maps (optional)
-      }),
-    ],
+    minimizer: [new TerserPlugin()],
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
